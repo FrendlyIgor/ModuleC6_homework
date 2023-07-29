@@ -38,10 +38,8 @@ btnLoc.addEventListener('click', () => {
         navigator.geolocation.getCurrentPosition((position) => {
             const { coords } = position;
             const geoLink = `https://www.openstreetmap.org/#map=14/${coords.latitude}/${coords.longitude}`;
-            const geoLinkMessage = `<a href="${geoLink}">Гео-позиция</a>`;
-            websocket.send(geoLinkMessage, 'client');
-            websocket.send('Широта ' + coords.latitude + ' Долгота ' + coords.longitude)
-            websocket.send(`<span style = "margin-right: 0px; padding-left: 0;">Широта: ${coords.latitude}; Долгота: ${coords.longitude}.</span>`)
+            const geoLinkMessage = `<a href="${geoLink}">Гео-локация</a>`;
+            websocket.send(geoLinkMessage, 'client'); 
         })
     }
 });
